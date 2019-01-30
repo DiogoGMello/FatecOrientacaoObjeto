@@ -1,4 +1,4 @@
-package telasprojeto;
+package gui;
 
 import javax.swing.*;
 

@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package telasprojeto;
+package gui;
 
 /**
  *
  * @author diogo
  */
-public class LivroCadastroGUI {
+public class ExemplarCadastroGUI {
     
 }

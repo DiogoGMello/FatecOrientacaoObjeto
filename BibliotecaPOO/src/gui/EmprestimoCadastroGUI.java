@@ -1,5 +1,5 @@
 
-package telasprojeto;
+package gui;
 
 public class EmprestimoCadastroGUI {
     
