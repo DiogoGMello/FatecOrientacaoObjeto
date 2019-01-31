@@ -6,7 +6,6 @@ public class Cliente {
     private String nome;
     private String endereco;
     private String numeroTelefone;
-    
     private String statusAssinatura;
     
     public Cliente(){

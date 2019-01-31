@@ -23,8 +23,7 @@ public class TelaInicial extends JFrame{
         super("SGB - BIBLIO.TEC 0.1");
         frame = new JFrame("Tela Inicial");
         
-        Container contPrincipal;
-        contPrincipal = getContentPane();
+        Container contPrincipal = getContentPane();
         Container panelBtnDireita = new JPanel();
         Container panelLblEsquerda = new JPanel();
         
