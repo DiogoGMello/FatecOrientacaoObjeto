@@ -15,5 +15,6 @@ public class Emprestimo {
     private int segundoExemplarID;
     private int terceiroExemplarID;
     
+    private int clienteID;
     
 }
