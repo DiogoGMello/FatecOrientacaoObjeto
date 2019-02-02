@@ -4,7 +4,7 @@ package model.bean;
 import java.sql.Date;
 
 public class Livro {
-    private int IDLivro;
+    private int idLivro;
     private String titulo;
     private String editora;
     private String subTitulo;
@@ -14,12 +14,12 @@ public class Livro {
     public Livro(){
     }
 
-    public int getIDLivro() {
-        return IDLivro;
+    public int getIdLivro() {
+        return idLivro;
     }
 
-    public void setIDLivro(int IDLivro) {
-        this.IDLivro = IDLivro;
+    public void setIdLivro(int idLivro) {
+        this.idLivro = idLivro;
     }
 
     public String getTitulo() {
