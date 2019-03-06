@@ -4,13 +4,15 @@ import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class EmprestimoCadastroGUI extends JFrame{
+public class EmprestimoCadastroGUI extends JFrame implements ActionListener{
     
     private JFrame frame;
     
@@ -18,11 +20,11 @@ public class EmprestimoCadastroGUI extends JFrame{
     private JButton btnSair = new JButton("Sair");
     private JButton btnLimpar = new JButton("Limpar");
     private JButton btnBuscar = new JButton("Buscar");
-    private JButton btnDataAtual = new JButton("Hoje");
+    private JButton btnDataHoje = new JButton("Hoje");
     private JButton btnPesquisarCliente = new JButton("Pesq Cliente");
-    private JButton btnPesqPrimExemplar = new JButton("Pesq Exemplar");
-    private JButton btnPesqSegExemplar = new JButton("Pesq Exemplar");
-    private JButton btnPesqTercExemplar = new JButton("Pesq Exemplar");
+    private JButton btnPesqPrimExemplar = new JButton("Pesq Exemplar 1");
+    private JButton btnPesqSegExemplar = new JButton("Pesq Exemplar 2");
+    private JButton btnPesqTercExemplar = new JButton("Pesq Exemplar 3");
     private JButton btnGerarDataAtual = new JButton("Data Atual");
     private JButton btnGerarDevolucao = new JButton("Confirmar Devolução");
         
@@ -53,8 +55,49 @@ public class EmprestimoCadastroGUI extends JFrame{
     private JTextField txtNomeCliente = new JTextField();
     private JTextField txtSitacaoEmprestimo = new JTextField("EM DIA");
     
+    @Override
+    public void actionPerformed(ActionEvent e){
+        String cmd = e.getActionCommand();
+        if("Sair".equals(cmd)){
+            new TelaInicial().setVisible(true);
+            dispose();
+        }else if("Salvar".equals(cmd)){
+            
+        }else if("Limpar".equals(cmd)){
+            
+        }else if("Buscar".equals(cmd)){
+            
+        }else if("Hoje".equals(cmd)){
+            
+        }else if("Pes Cliente".equals(cmd)){
+            
+        }else if("Pesq Exemplar 1".equals(cmd)){
+            
+        }else if("Pesq Exemplar 2".equals(cmd)){
+            
+        }else if("Pesq Exemplar 3".equals(cmd)){
+            
+        }else if("Data Atual".equals(cmd)){
+            
+        }else if("Confirmar Devolução".equals(cmd)){
+            
+        }
+    }
+    
     public EmprestimoCadastroGUI() {
+        super("SGB - BIBLIO.TEC 0.1");
         //frame = new JFrame("Exemplar Cliente");
+        
+        btnSalvar.addActionListener(this);
+        btnSair.addActionListener(this);
+        btnLimpar.addActionListener(this);
+        btnBuscar.addActionListener(this);
+        btnDataHoje.addActionListener(this);
+        btnPesquisarCliente.addActionListener(this);
+        btnPesqPrimExemplar.addActionListener(this);
+        btnPesqSegExemplar.addActionListener(this);
+        btnGerarDataAtual.addActionListener(this);
+        btnGerarDevolucao.addActionListener(this);
         
         Container contPrincipal = getContentPane();
         

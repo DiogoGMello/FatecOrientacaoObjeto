@@ -3,25 +3,54 @@ package gui;
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+//import java.awt.event.*;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class TelaInicial extends JFrame{
+public class TelaInicial extends JFrame implements ActionListener{
     private JFrame frame;
     
-    private JButton btnEmprestimos = new JButton("Emprestmos");
+    private JButton btnEmprestimos = new JButton("Emprestimos");
     private JButton btnClientes = new JButton("Clientes");
     private JButton btnExemplares = new JButton("Exemplares");
     private JButton btnLivros = new JButton("Livros");
     private JButton btnExit = new JButton("Sair");
     
     private JLabel lblTitulo = new JLabel("Biblioteca XPTO");
+   
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        String cmd = e.getActionCommand();
+        if("Clientes".equals(cmd)){
+            new ClienteCadastroGUI().setVisible(true);
+            dispose();
+        }else if("Emprestimos".equals(cmd)){
+            new EmprestimoCadastroGUI().setVisible(true);
+            dispose();
+        }else if("Exemplares".equals(cmd)){
+            new ExemplarCadastroGUI().setVisible(true);
+            dispose();
+        }else if("Livros".equals(cmd)){
+            new LivroCadastroGUI().setVisible(true);
+            dispose();
+        }else if("Sair".equals(cmd)){
+            dispose();
+        }
+    }
     
     public TelaInicial() {
         super("SGB - BIBLIO.TEC 0.1");
         //frame = new JFrame("Tela Inicial");
+        
+        btnEmprestimos.addActionListener(this);
+        btnClientes.addActionListener(this);
+        btnLivros.addActionListener(this);
+        btnExemplares.addActionListener(this);
+        btnExit.addActionListener(this);
         
         Container contPrincipal = getContentPane();
         Container panelBtnDireita = new JPanel();

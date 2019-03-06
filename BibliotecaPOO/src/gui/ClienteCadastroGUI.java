@@ -4,13 +4,15 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.Container;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class ClienteCadastroGUI extends JFrame{
+public class ClienteCadastroGUI extends JFrame implements ActionListener{
     private JFrame frame;
     
     private JButton btnSalvar = new JButton("Salvar");
@@ -31,10 +33,31 @@ public class ClienteCadastroGUI extends JFrame{
     private JTextField txtEndereco = new JTextField();
     private JTextField txtTelefone = new JTextField();
     private JLabel lblStatusResult = new JLabel("ATIVO");
+
+    @Override
+    public void actionPerformed(ActionEvent e){
+        String cmd = e.getActionCommand();
+        if("Sair".equals(cmd)){
+            new TelaInicial().setVisible(true);
+            dispose();
+        }else if("Salvar".equals(cmd)){
+            
+        }else if("Limpar".equals(cmd)){
+        
+        }else if("Buscar".equals(cmd)){
+            
+        }
+    }
     
     public ClienteCadastroGUI(){
         super("SGB - BIBLIO.TEC 0.1");
-        frame = new JFrame("Cliente Cadastro");
+        //frame = new JFrame("Cliente Cadastro");
+        
+        btnBuscar.addActionListener(this);
+        btnSalvar.addActionListener(this);
+        btnLimpar.addActionListener(this);
+        btnSair.addActionListener(this);
+        btnBuscar.addActionListener(this);
         
         Container contPrincipal = getContentPane();
         Container panelLblSuperior = new JPanel();

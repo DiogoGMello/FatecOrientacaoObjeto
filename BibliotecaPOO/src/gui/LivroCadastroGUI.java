@@ -5,13 +5,15 @@ import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class LivroCadastroGUI extends JFrame{
+public class LivroCadastroGUI extends JFrame implements ActionListener{
     JFrame frame;
     
     private JButton btnSalvar = new JButton("Salvar");
@@ -35,7 +37,28 @@ public class LivroCadastroGUI extends JFrame{
     private JTextField txtAnoEdicao = new JTextField();
     private JTextField txtEdicao = new JTextField();
     
+    @Override
+    public void actionPerformed(ActionEvent e){
+        String cmd = e.getActionCommand();
+        if("Sair".equals(cmd)){
+            new TelaInicial().setVisible(true);
+            dispose();
+        }else if("Buscar".equals(cmd)){
+            
+        }else if("Limpar".equals(cmd)){
+            
+        }else if("Salvar".equals(cmd)){
+            
+        }
+    }
+    
     public LivroCadastroGUI(){
+        super("SGB - BIBLIO.TEC 0.1");
+        
+        btnBuscar.addActionListener(this);
+        btnLimpar.addActionListener(this);
+        btnSair.addActionListener(this);
+        btnSalvar.addActionListener(this);
         
         Container contPrincipal = getContentPane();
         
