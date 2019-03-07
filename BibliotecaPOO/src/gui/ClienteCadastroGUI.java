@@ -1,5 +1,7 @@
 package gui;
 
+import model.bean.Cliente;
+
 import java.awt.*;
 import javax.swing.*;
 import java.awt.BorderLayout;
@@ -11,10 +13,13 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import model.services.ClienteService;
 
 public class ClienteCadastroGUI extends JFrame implements ActionListener{
     private JFrame frame;
     
+    String id = Integer.toString(Cliente.getClienteCont());
+            
     private JButton btnSalvar = new JButton("Salvar");
     private JButton btnBuscar = new JButton("Buscar");
     private JButton btnLimpar = new JButton("Limpar");
@@ -28,11 +33,14 @@ public class ClienteCadastroGUI extends JFrame implements ActionListener{
     private JLabel lblTelefone = new JLabel("Telefone");
     private JLabel lblStatus = new JLabel("Status");
     
-    private JTextField txtIDCliente = new JTextField();
+    private JLabel lblIdCliente = new JLabel(id);
     private JTextField txtNome = new JTextField();
     private JTextField txtEndereco = new JTextField();
     private JTextField txtTelefone = new JTextField();
     private JLabel lblStatusResult = new JLabel("ATIVO");
+    
+    ClienteService clienteService = new ClienteService();
+    Cliente cliente = new Cliente();
 
     @Override
     public void actionPerformed(ActionEvent e){
@@ -41,9 +49,12 @@ public class ClienteCadastroGUI extends JFrame implements ActionListener{
             new TelaInicial().setVisible(true);
             dispose();
         }else if("Salvar".equals(cmd)){
-            
+            cliente.setIDCliente(Cliente.getClienteCont());
+            cliente.setNome(txtNome.getText());
+            cliente.setEndereco(txtEndereco.getText());
+            cliente.setNumeroTelefone(txtTelefone.getText());
         }else if("Limpar".equals(cmd)){
-        
+            
         }else if("Buscar".equals(cmd)){
             
         }
@@ -85,7 +96,7 @@ public class ClienteCadastroGUI extends JFrame implements ActionListener{
         panelLblEsquerdo.add(lblTelefone);
         panelLblEsquerdo.add(lblStatus);
         
-        panelTxtBoxDireito.add(txtIDCliente);
+        panelTxtBoxDireito.add(lblIdCliente);
         panelTxtBoxDireito.add(txtNome);
         panelTxtBoxDireito.add(txtEndereco);
         panelTxtBoxDireito.add(txtTelefone);

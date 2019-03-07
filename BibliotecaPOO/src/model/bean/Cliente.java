@@ -2,13 +2,32 @@
 package model.bean;
 
 public class Cliente {
+    
+    protected static int clienteCont = 1;
+    
     private int IDCliente;
     private String nome;
     private String endereco;
     private String numeroTelefone;
-    private String statusAssinatura;
-    
+    private boolean statusAssinatura;
+
     public Cliente(){
+    }
+        
+    public boolean isStatusAssinatura() {
+        return statusAssinatura;
+    }
+
+    public void setStatusAssinatura(boolean statusAssinatura) {
+        this.statusAssinatura = statusAssinatura;
+    }
+
+    public static int getClienteCont() {
+        return clienteCont;
+    }
+
+    public static void setClienteCont(int clienteCont) {
+        Cliente.clienteCont = clienteCont;
     }
 
     public int getIDCliente() {
@@ -41,14 +60,6 @@ public class Cliente {
 
     public void setNumeroTelefone(String numeroTelefone) {
         this.numeroTelefone = numeroTelefone;
-    }
-
-    public String getStatusAssinatura() {
-        return statusAssinatura;
-    }
-
-    public void setStatusAssinatura(String statusAssinatura) {
-        this.statusAssinatura = statusAssinatura;
     }
     
 }
