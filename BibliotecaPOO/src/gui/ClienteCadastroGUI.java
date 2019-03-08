@@ -33,7 +33,7 @@ public class ClienteCadastroGUI extends JFrame implements ActionListener{
     private JLabel lblTelefone = new JLabel("Telefone");
     private JLabel lblStatus = new JLabel("Status");
     
-    private JLabel lblIdCliente = new JLabel(id);
+    private JTextField lblIdCliente = new JTextField(id);
     private JTextField txtNome = new JTextField();
     private JTextField txtEndereco = new JTextField();
     private JTextField txtTelefone = new JTextField();
@@ -53,10 +53,27 @@ public class ClienteCadastroGUI extends JFrame implements ActionListener{
             cliente.setNome(txtNome.getText());
             cliente.setEndereco(txtEndereco.getText());
             cliente.setNumeroTelefone(txtTelefone.getText());
+            
+            clienteService.salvarCliente(cliente);
+            
+            cliente.setIDCliente(Cliente.getClienteCont());
+            lblIdCliente.setText(id);
+            txtNome.setText("");
+            txtEndereco.setText("");
+            txtTelefone.setText("");
+            
         }else if("Limpar".equals(cmd)){
-            
+            txtNome.setText("");
+            txtEndereco.setText("");
+            txtTelefone.setText("");
         }else if("Buscar".equals(cmd)){
-            
+            cliente = 
+                    clienteService.buscaCliente(
+                            Integer.parseInt(lblIdCliente.getText()));
+            txtNome.setText(cliente.getNome());
+            txtEndereco.setText(cliente.getEndereco());
+            txtTelefone.setText(cliente.getNumeroTelefone());
+              
         }
     }
     

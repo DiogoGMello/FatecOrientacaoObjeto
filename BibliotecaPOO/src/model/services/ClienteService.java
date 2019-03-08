@@ -13,15 +13,13 @@ public class ClienteService extends Cliente{
     }
     
     public Cliente buscaCliente(int id){
-        Cliente cliente = new Cliente();
         
         for(Cliente c : this.cliente){
             if(c.getIDCliente() == id){
-                cliente = c;
+                return c;
             }
         }
-        return cliente;
+        return null;
     }
-    
-    
+     
 }
