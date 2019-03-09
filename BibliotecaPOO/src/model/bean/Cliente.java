@@ -3,7 +3,7 @@ package model.bean;
 
 public class Cliente {
     
-    protected static int clienteCont = 1;
+    //protected static int clienteCont = 1;
     
     private int IDCliente;
     private String nome;
@@ -22,13 +22,13 @@ public class Cliente {
         this.statusAssinatura = statusAssinatura;
     }
 
-    public static int getClienteCont() {
-        return clienteCont;
-    }
-
-    public static void setClienteCont(int clienteCont) {
-        Cliente.clienteCont = clienteCont;
-    }
+//    public static int getClienteCont() {
+//        return clienteCont;
+//    }
+//
+//    public static void setClienteCont(int clienteCont) {
+//        Cliente.clienteCont = clienteCont;
+//    }
 
     public int getIDCliente() {
         return IDCliente;
